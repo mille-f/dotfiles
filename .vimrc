@@ -4,9 +4,10 @@ set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
 
 " 文字コード
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp
 scriptencoding utf-8
 set encoding=utf-8
+set fileencoding=utf-8
 
 " フォント
 "set guifont=Inconsolata_for_Powerline:h10:cANSI
@@ -21,6 +22,9 @@ filetype indent plugin on
 " 256色を使う
 set t_Co=256
 
+" 80列目をハイライト
+set colorcolumn=80
+
 " ペーストモード(ONにするとautocomplpopが動かない)
 "set paste
 
@@ -34,7 +38,7 @@ syntax on
 set hidden
 
 " 「Vimを使ってくれてありがとう」を消す
-"set notitle
+set notitle
 
 " タイプ途中のコマンドを画面最下行に表示
 set showcmd
@@ -43,8 +47,8 @@ set showcmd
 set autoindent
 set smartindent
 set cindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " vim-indent-guidesの設定
@@ -339,8 +343,13 @@ set pastetoggle=<F11>
 " <F5>キーでSCCompileRun
 nmap <F5> :SCCompileRun<cr>
 
-"[JAVA] :Exeでコンパイルしてから実行
-autocmd FileType java :command! Exe call s:Javac()
+" Rubyを実行
+nnoremap <C-r> :!ruby %<cr>
+
+" Java
+command! Javac call s:Javac()
+nmap <F6> :Javac<CR>
+
 function! s:Javac()
     :w
     let path = expand("%")
@@ -348,13 +357,11 @@ function! s:Javac()
     let dpath = split(path,".java$")
     let ret = system(syn)
     if ret == ""
-        :echo "=======\r\nCompile Success"
         let syn = "java ".dpath[0]
         let ret = system(syn)
-        :echo "=======\r\n実行結果:\r\n".ret
-    elselet g:indentLine_faster = 1
-nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
-        :echo "=======\r\nCompile Failure\r\n".ret
+        :echo "====\r\n実行結果:\r\n".ret
+    else
+        :echo ret
     endif
 endfunction
 

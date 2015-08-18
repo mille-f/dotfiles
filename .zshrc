@@ -141,6 +141,7 @@ alias jarx='jar -xf'
 alias jarc='jar -cvf'
 alias netstat="NETSTAT"
 alias ifconfig="ipconfig"
+alias vi="vim"
 alias v="vim"
 alias open="cygstart"
 alias viz="vim ~/.zshrc"
