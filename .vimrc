@@ -544,6 +544,7 @@ if has('vim_starting')
     NeoBundle 'git://github.com/vim-scripts/VimCoder.jar'
     NeoBundle 'vim-scripts/javacomplete'
     NeoBundle 'Yggdroot/indentLine'
+    NeoBundle 'bronson/vim-trailing-whitespace'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
