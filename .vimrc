@@ -301,7 +301,7 @@ set wildmenu
 
 " コマンドラインの高さを2行に
 set cmdheight=2
- 
+
 " 入力されているテキストの最大幅
 " (行がそれより長くなると、この幅を超えないように空白の後で改行される)を無効にする
 set textwidth=0
@@ -500,13 +500,13 @@ endif
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
- 
+
  " Tell Neosnippet about the other snippets
  let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " ### Neobundleの設定 ###
 set nocompatible
-filetype off 
+filetype off
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
