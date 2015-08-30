@@ -21,7 +21,7 @@ local GREEN=$'%{\e[1;32m%}'
 local BLUE=$'%{\e[1;34m%}'
 local DEFAULT=$'%{\e[1;m%}'
 
-# 時刻更新                                                                                          
+# 時刻更新
 TRAPALRM () { zle reset-prompt }
 TMOUT=1
 
