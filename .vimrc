@@ -154,6 +154,9 @@ set laststatus=2
 " タブラインを表示
 set showtabline=2
 
+" インサートモードから抜けると自動的にIMEをオフにする
+set iminsert=0
+
 " ノーマルモードに戻った時に日本語入力をオフにする
 set imdisable
 
