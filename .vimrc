@@ -110,6 +110,7 @@ inoremap <C-s> <Esc>:w<CR>
 inoremap <C-q> <Esc>:q<CR>
 inoremap <C-v> <Esc>p<CR>
 inoremap <C-a> <Esc>ggVG<CR>
+inoremap <C-z> <Esc>u<CR>
 
 " ファイルを開いたら前回のカーソル位置へ移動
 augroup vimrcEx
