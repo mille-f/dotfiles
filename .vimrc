@@ -34,6 +34,9 @@ set clipboard=unnamed,autoselect
 " 色づけをオン
 syntax on
 
+" .swapファイルを作らない
+set noswapfile
+
 " バッファを保存しなくても他のバッファを表示できるようにする
 set hidden
 
@@ -106,6 +109,7 @@ autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
 inoremap <C-s> <Esc>:w<CR>
 inoremap <C-q> <Esc>:q<CR>
 inoremap <C-v> <Esc>p<CR>
+inoremap <C-a> <Esc>ggVG<CR>
 
 " ファイルを開いたら前回のカーソル位置へ移動
 augroup vimrcEx
