@@ -407,6 +407,16 @@ vmap \c <Plug>(caw:I:toggle)
 nmap \C <Plug>(caw:I:uncomment)
 vmap \C <Plug>(caw:I:uncomment)
 
+" 拡張子がmdのファイルをmarkdownとして認識
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
+" previm の設定
+let g:previm_open_cmd = ''
+let g:previm_enable_realtime = 1
+
 " autocomplpopの設定
 "autocmd FileType * let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i'
 "autocmd FileType perl let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/perl.dict'
@@ -554,6 +564,7 @@ if has('vim_starting')
     NeoBundle 'Yggdroot/indentLine'
     NeoBundle 'bronson/vim-trailing-whitespace'
     NeoBundle 'kannokanno/previm'
+    NeoBundle 'tyru/open-browser.vim'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
