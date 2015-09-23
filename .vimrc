@@ -500,16 +500,21 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 "autocmd FileType java :setlocal completefunc=javacomplete#CompleteParamsInfo
 
 " ### jscomplete の設定 ###
-autocmd FileType javascript
-  \ :setl omnifunc=jscomplete#CompleteJS#term#Complete
+"autocmd FileType javascript
+"  \ :setl omnifunc=jscomplete#CompleteJS
 " DOMとMozilla関連とES6のメソッドを補完
-let g:jscomplete_use = ['dom', 'moz', 'es6th']
+"let g:jscomplete_use = ['dom', 'moz', 'es6th']
+autocmd FileType javascript setlocal omnifunc=tern#Complete
 
 " ### JSHintの設定 ###
-let g:syntastic_javascript_checker = 'jshint'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"let g:syntastic_javascript_checker = 'jshint'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+let g:syntastic_mode_map = {
+\ "mode" : "active",
+\ "active_filetypes" : ["javascript", "json"],
+\}
 
 " ### Neosnippetの設定 ###
 " Plugin key-mappings.
