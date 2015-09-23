@@ -565,6 +565,7 @@ if has('vim_starting')
     NeoBundle 'bronson/vim-trailing-whitespace'
     NeoBundle 'kannokanno/previm'
     NeoBundle 'tyru/open-browser.vim'
+    NeoBundle 'mattn/jscomplete-vim'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
