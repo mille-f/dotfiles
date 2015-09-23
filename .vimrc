@@ -421,8 +421,8 @@ let g:previm_enable_realtime = 1
 "autocmd FileType * let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i'
 "autocmd FileType perl let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/perl.dict'
 autocmd FileType cpp :let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/cpp.dict'
-"autocmd FileType ruby let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/ruby.dict'
-"autocmd FileType javascript let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/javascript.dict'
+autocmd FileType ruby let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/ruby.dict'
+autocmd FileType javascript let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/javascript.dict'
 "autocmd FileType erlang let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/erlang.dict'
 
 "let g:AutoComplPop_IgnoreCaseOption = 1
@@ -453,14 +453,15 @@ smap <expr><TAB> neosnippet#expandable() <Bar><bar> neosnippet#jumpable() ? "\<P
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default'  : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme'   : $HOME.'/.gosh_completions',
-    \ 'scala'    : $HOME.'./.vim/dict/scala.dict',
-    \ 'ruby'     : $HOME.'./.vim/dict/ruby.dict',
-    \ 'java'     : $HOME.'./.vim/dict/java.dict',
-    \ 'c'        : $HOME.'./.vim/dict/c.dict',
-    \ 'cpp'      : $HOME.'./.vim/dict/cpp.dict'
+    \ 'default'   : '',
+    \ 'vimshell'  : $HOME.'/.vimshell_hist',
+    \ 'scheme'    : $HOME.'/.gosh_completions',
+    \ 'scala'     : $HOME.'./.vim/dict/scala.dict',
+    \ 'ruby'      : $HOME.'./.vim/dict/ruby.dict',
+    \ 'java'      : $HOME.'./.vim/dict/java.dict',
+    \ 'javascript': $HOME.'/.vim/dict/javascript.dict',
+    \ 'c'         : $HOME.'./.vim/dict/c.dict',
+    \ 'cpp'       : $HOME.'./.vim/dict/cpp.dict'
     \ }
 
 " Define keyword.
@@ -483,19 +484,32 @@ let g:neocomplcache_force_overwrite_completefunc = 1
 
 " Define Dictionary
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default'  : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme'   : $HOME.'/.gosh_completions',
-    \ 'scala'    : $HOME.'/.vim/dict/scala.dict',
-    \ 'ruby'     : $HOME.'/.vim/dict/ruby.dict',
-    \ 'java'     : $HOME.'/.vim/dict/java.dict',
-    \ 'c'        : $HOME.'/.vim/dict/c.dict',
-    \ 'cpp'      : $HOME.'/.vim/dict/cpp.dict'
+    \ 'default'   : '',
+    \ 'vimshell'  : $HOME.'/.vimshell_hist',
+    \ 'scheme'    : $HOME.'/.gosh_completions',
+    \ 'scala'     : $HOME.'/.vim/dict/scala.dict',
+    \ 'ruby'      : $HOME.'/.vim/dict/ruby.dict',
+    \ 'java'      : $HOME.'/.vim/dict/java.dict',
+    \ 'javascript': $HOME.'/.vim/dict/javascript.dict',
+    \ 'c'         : $HOME.'/.vim/dict/c.dict',
+    \ 'cpp'       : $HOME.'/.vim/dict/cpp.dict'
     \ }
 
 " ### javacompleteの設定 ###
 "autocmd FileType java :setlocal omnifunc=javacomplete#Complete
 "autocmd FileType java :setlocal completefunc=javacomplete#CompleteParamsInfo
+
+" ### jscomplete の設定 ###
+autocmd FileType javascript
+  \ :setl omnifunc=jscomplete#CompleteJS#term#Complete
+" DOMとMozilla関連とES6のメソッドを補完
+let g:jscomplete_use = ['dom', 'moz', 'es6th']
+
+" ### JSHintの設定 ###
+let g:syntastic_javascript_checker = 'jshint'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " ### Neosnippetの設定 ###
 " Plugin key-mappings.
@@ -566,6 +580,7 @@ if has('vim_starting')
     NeoBundle 'kannokanno/previm'
     NeoBundle 'tyru/open-browser.vim'
     NeoBundle 'mattn/jscomplete-vim'
+    NeoBundle 'marijnh/tern_for_vim'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
