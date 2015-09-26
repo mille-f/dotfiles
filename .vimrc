@@ -77,30 +77,30 @@ set list listchars=tab:\¦\
 set timeoutlen=100
 
 " 括弧を自動補完 (改造版)
-inoremap <expr><CR> <SID>ExCr()
-function! s:ExCr()
-    if col('.') != col('$')
-        return "\<CR>"
-    endif
-    let l = getline('.')
-    if l =~ '{$'
-        return "\<CR>}\<Up>\<End>\<CR>"
-    elseif l =~ '($'
-        return "\<CR>)\<Up>\<End>\<CR>"
-    elseif l =~ '[$'
-        return "\<CR>]\<Up>\<End>\<CR>"
-    else
-        return "\<CR>"
-    endif
-endfunction
-inoremap [ []<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-vnoremap { "zdi^V{<C-R>z}<ESC>
-vnoremap [ "zdi^V[<C-R>z]<ESC>
-vnoremap ( "zdi^V(<C-R>z)<ESC>
-vnoremap " "zdi^V"<C-R>z^V"<ESC>
-vnoremap ' "zdi'<C-R>z'<ESC>
+"inoremap <expr><CR> <SID>ExCr()
+"function! s:ExCr()
+"    if col('.') != col('$')
+"        return "\<CR>"
+"    endif
+"    let l = getline('.')
+"    if l =~ '{$'
+"        return "\<CR>}\<Up>\<End>\<CR>"
+"    elseif l =~ '($'
+"        return "\<CR>)\<Up>\<End>\<CR>"
+"    elseif l =~ '[$'
+"        return "\<CR>]\<Up>\<End>\<CR>"
+"    else
+"        return "\<CR>"
+"    endif
+"endfunction
+"inoremap [ []<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
+"vnoremap { "zdi^V{<C-R>z}<ESC>
+"vnoremap [ "zdi^V[<C-R>z]<ESC>
+"vnoremap ( "zdi^V(<C-R>z)<ESC>
+"vnoremap " "zdi^V"<C-R>z^V"<ESC>
+"vnoremap ' "zdi'<C-R>z'<ESC>
 
 " 閉じタグを自動補完
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
@@ -586,6 +586,7 @@ if has('vim_starting')
     NeoBundle 'tyru/open-browser.vim'
     NeoBundle 'mattn/jscomplete-vim'
     NeoBundle 'marijnh/tern_for_vim'
+    NeoBundle 'cohama/lexima.vim'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
