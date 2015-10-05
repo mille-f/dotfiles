@@ -143,6 +143,9 @@ set number
 " F3キーで絶対行数と普通の行番号をトグル
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
+" <Ctrl-T>  タイムスタンプを挿入してinsertモードへ移行
+nnoremap <C-T> <ESC>i<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR><CR>
+
 " Tab、改行を可視化
 "set list
 
