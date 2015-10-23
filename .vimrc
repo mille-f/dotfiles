@@ -112,6 +112,16 @@ inoremap <C-v> <Esc>p<CR>
 inoremap <C-a> <Esc>ggVG<CR>
 inoremap <C-z> <Esc>u<CR>
 
+" jj or jk Escape
+inoremap <silent> jj <ESC>
+inoremap <silent> jk <ESC>
+
+" 挿入モードでのカーソル移動
+inoremap <C-j> <Down>
+"inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 " ファイルを開いたら前回のカーソル位置へ移動
 augroup vimrcEx
  autocmd!
