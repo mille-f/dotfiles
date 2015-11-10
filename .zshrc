@@ -6,6 +6,7 @@ export EDITOR=vim
 
 autoload -U compinit;compinit
 autoload -U colors; colors
+autoload -Uz vcs_info
 
 setopt no_beep           # ビープ音を鳴らさないようにする
 setopt auto_cd           # ディレクトリ名の入力のみで移動する
@@ -31,9 +32,18 @@ PROMPT=$BLUE'[%n]%# '$WHITE
 RPROMPT=$GREEN'[%~]'$WHITE
 setopt transient_rprompt
 
+# gitのbranchを表示
+zstyle ':vcs_info:*' formats '[%b]'
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+
 ### プロンプト指定 ###
 PROMPT="
-[%n] %{${fg[yellow]}%}%D %*%{${reset_color}%}
+[%n] %1(v|%F{red}%1v%f|) %{${fg[yellow]}%}%D %*%{${reset_color}%}
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'-') <!(*;-;%)? <)%{${reset_color}%} "
 
 ### プロンプト指定（コマンドの続き） ###
@@ -155,10 +165,12 @@ alias aoj="cd ~/Dropbox/Home/AOJ/"
 alias io="cd ~/Dropbox/Home/HTML/mille-f.github.io"
 alias doc="cd ~/Dropbox/Documents/"
 alias vag="cd ~/Documents/VM/"
+alias bong="cd ~/workspace/InfoExpr2/Bong/src"
 alias tmux="tmux -2"
 alias rspec="rspec -c"
 alias master="git push -u origin master"
 alias amend="git ci --amend"
 alias ci="git ci -m"
 alias add="git add"
+alias co="git co"
 alias log="git log"
