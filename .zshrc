@@ -43,7 +43,7 @@ precmd () {
 
 ### プロンプト指定 ###
 PROMPT="
-[%n] %1(v|%F{red}%1v%f|) %{${fg[yellow]}%}%D %*%{${reset_color}%}
+[%n] %{${fg[yellow]}%}%D %*%{${reset_color}%} %1(v|%F{cyan}%1v%f|)
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'-') <!(*;-;%)? <)%{${reset_color}%} "
 
 ### プロンプト指定（コマンドの続き） ###
