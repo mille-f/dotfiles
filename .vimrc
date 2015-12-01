@@ -600,6 +600,7 @@ if has('vim_starting')
     NeoBundle 'mattn/jscomplete-vim'
     NeoBundle 'marijnh/tern_for_vim'
     NeoBundle 'cohama/lexima.vim'
+    NeoBundle 'plasticboy/vim-markdown'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
