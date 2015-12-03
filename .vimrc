@@ -436,10 +436,11 @@ let g:quickrun_config = {
 \       "runner" : "vimproc",
 \       "runner/vimproc/updatetime" : 60
 \   },
+\   "markdown": {
+\     'type': 'markdown/gfm',
+\     'outputter': 'browser'
+\   }
 \}
-let g:quickrun_config['markdown'] = {
-      \ 'outputter': 'browser',
-      \ }
 
 " autocomplpopの設定
 "autocmd FileType * let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i'
@@ -612,6 +613,8 @@ if has('vim_starting')
     NeoBundle 'marijnh/tern_for_vim'
     NeoBundle 'cohama/lexima.vim'
     NeoBundle 'plasticboy/vim-markdown'
+    NeoBundle 'matt/webapi-vim'
+    NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
