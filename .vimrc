@@ -546,6 +546,17 @@ let g:syntastic_mode_map = {
 \ "active_filetypes" : ["javascript", "json"],
 \}
 
+" jedi-vim Setting
+
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+
+"g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
 " ### Neosnippetの設定 ###
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -621,6 +632,8 @@ if has('vim_starting')
     NeoBundle 'matt/webapi-vim'
     NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
     NeoBundle 'davidhalter/jedi-vim'
+    NeoBundle 'andviro/flake8-vim'
+    NeoBundle 'hynek/vim-python-pep8-indent'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
