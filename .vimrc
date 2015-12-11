@@ -364,8 +364,11 @@ set pastetoggle=<F11>
 " <F5>キーでSCCompileRun
 nmap <F5> :SCCompileRun<cr>
 
-" Rubyを実行
+" Ruby を実行
 nnoremap <C-r> :!ruby %<cr>
+
+" Python を実行
+nnoremap <C-p> :!python3 %<cr>
 
 " Java
 command! Javac call s:Javac()
@@ -444,8 +447,8 @@ let g:quickrun_config = {
 
 " autocomplpopの設定
 "autocmd FileType * let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i'
-"autocmd FileType perl let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/perl.dict'
-autocmd FileType cpp :let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/cpp.dict'
+autocmd FileType python let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/python.dict'
+autocmd FileType cpp let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/cpp.dict'
 autocmd FileType ruby let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/ruby.dict'
 autocmd FileType javascript let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/javascript.dict'
 "autocmd FileType erlang let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/erlang.dict'
@@ -486,7 +489,8 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'java'      : $HOME.'./.vim/dict/java.dict',
     \ 'javascript': $HOME.'/.vim/dict/javascript.dict',
     \ 'c'         : $HOME.'./.vim/dict/c.dict',
-    \ 'cpp'       : $HOME.'./.vim/dict/cpp.dict'
+    \ 'cpp'       : $HOME.'./.vim/dict/cpp.dict',
+    \ 'python'    : $HOME.'./.vim/dict/python.dict'
     \ }
 
 " Define keyword.
@@ -517,7 +521,8 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'java'      : $HOME.'/.vim/dict/java.dict',
     \ 'javascript': $HOME.'/.vim/dict/javascript.dict',
     \ 'c'         : $HOME.'/.vim/dict/c.dict',
-    \ 'cpp'       : $HOME.'/.vim/dict/cpp.dict'
+    \ 'cpp'       : $HOME.'/.vim/dict/cpp.dict',
+    \ 'python'    : $HOME.'/.vim/dict/python.dict'
     \ }
 
 " ### javacompleteの設定 ###
@@ -615,6 +620,7 @@ if has('vim_starting')
     NeoBundle 'plasticboy/vim-markdown'
     NeoBundle 'matt/webapi-vim'
     NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
+    NeoBundle 'davidhalter/jedi-vim'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
