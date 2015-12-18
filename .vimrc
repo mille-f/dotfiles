@@ -451,7 +451,7 @@ autocmd FileType python let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/d
 autocmd FileType cpp let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/cpp.dict'
 autocmd FileType ruby let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/ruby.dict'
 autocmd FileType javascript let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/javascript.dict'
-"autocmd FileType erlang let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/erlang.dict'
+autocmd FileType markdown let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/tex.dict'
 
 "let g:AutoComplPop_IgnoreCaseOption = 1
 
@@ -485,6 +485,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'vimshell'  : $HOME.'/.vimshell_hist',
     \ 'scheme'    : $HOME.'/.gosh_completions',
     \ 'scala'     : $HOME.'./.vim/dict/scala.dict',
+    \ 'markdown'  : $HOME.'./.vim/dict/tex.dict',
     \ 'ruby'      : $HOME.'./.vim/dict/ruby.dict',
     \ 'java'      : $HOME.'./.vim/dict/java.dict',
     \ 'javascript': $HOME.'/.vim/dict/javascript.dict',
@@ -517,6 +518,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'vimshell'  : $HOME.'/.vimshell_hist',
     \ 'scheme'    : $HOME.'/.gosh_completions',
     \ 'scala'     : $HOME.'/.vim/dict/scala.dict',
+    \ 'markdown'  : $HOME.'/.vim/dict/tex.vim',
     \ 'ruby'      : $HOME.'/.vim/dict/ruby.dict',
     \ 'java'      : $HOME.'/.vim/dict/java.dict',
     \ 'javascript': $HOME.'/.vim/dict/javascript.dict',
