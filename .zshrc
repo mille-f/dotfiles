@@ -136,7 +136,6 @@ stty -ixon -ixoff
 
 ### alias ###
 alias ls='ls -F --show-control-chars --color=auto'
-alias ls="ls --color=auto"
 alias la="ls -a"
 alias ll="ls -ltr"
 alias sl="ls"
@@ -165,7 +164,6 @@ alias aoj="cd ~/Dropbox/Home/AOJ/"
 alias io="cd ~/Dropbox/Home/HTML/mille-f.github.io"
 alias doc="cd ~/Dropbox/Documents/"
 alias vag="cd ~/Documents/VM/"
-alias bong="cd ~/workspace/InfoExpr2/Bong/src"
 alias tmux="tmux -2"
 alias rspec="rspec -c"
 alias push="git push origin"
