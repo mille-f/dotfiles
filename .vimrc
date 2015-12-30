@@ -416,12 +416,15 @@ endif
 " \c でカーソル行をコメントアウト
 " 再度 \c でコメントアウトを解除
 " 選択してから複数行の \c も可能
-nmap \c <Plug>(caw:I:toggle)
-vmap \c <Plug>(caw:I:toggle)
+nmap <C-c> <Plug>(caw:I:toggle)
+vmap <C-c> <Plug>(caw:I:toggle)
 
 " \C でコメントアウトの解除
 nmap \C <Plug>(caw:I:uncomment)
 vmap \C <Plug>(caw:I:uncomment)
+
+" Ctrl-Enter でコメントアウト
+"nmap <silent> <C-Enter> <C-u>TComment
 
 " 拡張子がmdのファイルをmarkdownとして認識
 augroup PrevimSettings
@@ -604,6 +607,7 @@ if has('vim_starting')
     NeoBundle "Shougo/neosnippet.vim"
     NeoBundle 'jpalardy/vim-slime'
     NeoBundle 'scrooloose/syntastic'
+    NeoBundle 'tomtom/tcomment_vim'
     NeoBundle 'scrooloose/nerdtree'
     NeoBundle 'thinca/vim-quickrun'
     NeoBundle 'itchyny/lightline.vim'
