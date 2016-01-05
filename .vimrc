@@ -420,8 +420,8 @@ nmap <C-c> <Plug>(caw:I:toggle)
 vmap <C-c> <Plug>(caw:I:toggle)
 
 " \C でコメントアウトの解除
-nmap \C <Plug>(caw:I:uncomment)
-vmap \C <Plug>(caw:I:uncomment)
+"nmap \C <Plug>(caw:I:uncomment)
+"vmap \C <Plug>(caw:I:uncomment)
 
 " Ctrl-Enter でコメントアウト
 "nmap <silent> <C-Enter> <C-u>TComment
