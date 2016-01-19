@@ -640,6 +640,7 @@ if has('vim_starting')
     NeoBundle 'davidhalter/jedi-vim'
     NeoBundle 'andviro/flake8-vim'
     NeoBundle 'hynek/vim-python-pep8-indent'
+    NeoBundle 'wakatime/vim-wakatime'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 
