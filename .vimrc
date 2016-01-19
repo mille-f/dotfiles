@@ -341,6 +341,9 @@ endif
 " カーソル行をハイライト
 set cursorline
 
+" カレント行に下線
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+
 " 括弧にカーソルが移ると対括弧がハイライト表示
 set showmatch
 
