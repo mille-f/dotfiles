@@ -23,7 +23,7 @@ filetype indent plugin on
 set t_Co=256
 
 " 80列目をハイライト
-set colorcolumn=80
+"set colorcolumn=80
 
 " ペーストモード(ONにするとautocomplpopが動かない)
 "set paste
@@ -106,11 +106,11 @@ set timeoutlen=100
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
 
 " Ctrl+Sで保存など
-inoremap <C-s> <Esc>:w<CR>
+inoremap <C-s> <Esc>:w<CR>i
 inoremap <C-q> <Esc>:q<CR>
-inoremap <C-v> <Esc>p<CR>
+inoremap <C-v> <Esc>p<CR>i
 inoremap <C-a> <Esc>ggVG<CR>
-inoremap <C-z> <Esc>u<CR>
+inoremap <C-z> <Esc>u<CR>i
 
 " jj or jk Escape
 inoremap <silent> jj <ESC>
