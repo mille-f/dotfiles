@@ -106,7 +106,7 @@ set timeoutlen=100
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
 
 " Ctrl+Sで保存など
-inoremap <C-s> <Esc>:w<CR>i
+inoremap <C-s> <Esc>:w<CR>
 inoremap <C-q> <Esc>:q<CR>
 inoremap <C-v> <Esc>p<CR>i
 inoremap <C-a> <Esc>ggVG<CR>
