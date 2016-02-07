@@ -142,6 +142,7 @@ alias sl="ls"
 alias ks="ls"
 alias dc="cd"
 alias del="rm -rf"
+alias ifconfig="ipconfig"
 alias ipconfig="ipconfig | nkf -w"
 alias apv='appletviewer -J-Dfile.encoding=UTF-8'
 alias javac='javac -J-Dfile.encoding=UTF-8'
@@ -149,7 +150,6 @@ alias java='java -Dfile.encoding=UTF-8'
 alias jarx='jar -xf'
 alias jarc='jar -cvf'
 alias netstat="NETSTAT"
-alias ifconfig="ipconfig"
 alias open="cygstart"
 alias vi="vim"
 alias v="vim"
