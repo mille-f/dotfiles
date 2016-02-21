@@ -134,6 +134,10 @@ fi
 # XON/XOFF
 stty -ixon -ixoff
 
+### suffix alias ###
+alias -s rb="ruby"
+alias -s py="python"
+
 ### alias ###
 alias ls='ls -F --show-control-chars --color=auto'
 alias la="ls -a"
@@ -141,6 +145,7 @@ alias ll="ls -ltr"
 alias sl="ls"
 alias ks="ls"
 alias dc="cd"
+alias p="pwd"
 alias del="rm -rf"
 alias ifconfig="ipconfig"
 alias ipconfig="ipconfig | nkf -w"
