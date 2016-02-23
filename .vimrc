@@ -624,6 +624,8 @@ if has('vim_starting')
     NeoBundle "git://github.com/tyru/caw.vim.git"
     NeoBundle "taku25/vim-visualstudio"
     NeoBundle "git://github.com/vim-ruby/vim-ruby.git"
+    NeoBundle 'tpope/vim-rails'
+    NeoBundle 'tpope/vim-surround'
     NeoBundle "git://github.com/honza/vim-snippets.git"
     NeoBundle "git://github.com/vim-scripts/SingleCompile.git"
     NeoBundle "git://github.com/jdonaldson/vaxe.git"
