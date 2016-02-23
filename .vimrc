@@ -102,16 +102,6 @@ set timeoutlen=100
 "vnoremap " "zdi^V"<C-R>z^V"<ESC>
 "vnoremap ' "zdi'<C-R>z'<ESC>
 
-" <% %> を自動補完
-inoremap <expr> % Lt_Percent_Completion()
-function Lt_Percent_Completion()
-  if matchstr(getline('.'), '.', col('.') -1 ) == ">"
-		return "\%\%\<Left>"
-	else
-		return "\%"
-	end
-endf
-
 " 閉じタグを自動補完
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
 
