@@ -435,6 +435,20 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
+""" NERDTree の設定
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden = 1
+" 色付け
+let g:NERDTreeHighlightCursorline=1
+" 横幅
+let NERDTreeWinSize=20
+"無視するファイル
+let g:NERDTreeIgnore=['\.clean$', '\.swp$', '\.bak$', '\~$']
+" 自動起動
+"autocmd vimenter * NERDTree
+" NERDTreeのみのとき自動で閉じる
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 " previm の設定
 let g:previm_open_cmd = ''
 let g:previm_enable_realtime = 1
