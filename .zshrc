@@ -154,6 +154,8 @@ alias javac='javac -J-Dfile.encoding=UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
 alias jarx='jar -xf'
 alias jarc='jar -cvf'
+alias py='python'
+alias winpy='/cygdrive/c/Python27/python.exe'
 alias netstat="NETSTAT"
 alias open="cygstart"
 alias e="emacs"
