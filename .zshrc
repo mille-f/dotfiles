@@ -154,10 +154,12 @@ alias javac='javac -J-Dfile.encoding=UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
 alias jarx='jar -xf'
 alias jarc='jar -cvf'
+alias jupyter='cd ~/Dropbox/jupyter;jupyter notebook'
 alias py='python'
 alias winpy='/cygdrive/c/Python27/python.exe'
 alias netstat="NETSTAT"
 alias open="cygstart"
+alias start="cygstart"
 alias e="emacs"
 alias vi="vim"
 alias v="vim"
