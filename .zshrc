@@ -159,7 +159,6 @@ alias py='python'
 alias winpy='/cygdrive/c/Python27/python.exe'
 alias netstat="NETSTAT"
 alias open="cygstart"
-alias start="cygstart"
 alias e="emacs"
 alias vi="vim"
 alias v="vim"
