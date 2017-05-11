@@ -13,9 +13,6 @@ set fileencoding=utf-8
 "set guifont=Inconsolata_for_Powerline:h10:cANSI
 "let g:Powerline_symbols='fancy'
 
-" Colorscheme
-colorscheme landscape
-
 " ファイル名と内容によってファイルタイプを判別し、ファイルタイププラグインを有効にする
 filetype indent plugin on
 
@@ -635,16 +632,16 @@ if has('vim_starting')
     NeoBundle 'airblade/vim-gitgutter'
     NeoBundle "slim-template/vim-slim"
     NeoBundle 'nathanaelkane/vim-indent-guides'
-    NeoBundle "git://github.com/tyru/caw.vim.git"
+    NeoBundle "tyru/caw.vim"
     NeoBundle "taku25/vim-visualstudio"
-    NeoBundle "git://github.com/vim-ruby/vim-ruby.git"
+    NeoBundle "vim-ruby/vim-ruby"
     NeoBundle 'tpope/vim-rails'
     NeoBundle 'tpope/vim-surround'
-    NeoBundle "git://github.com/honza/vim-snippets.git"
-    NeoBundle "git://github.com/vim-scripts/SingleCompile.git"
-    NeoBundle "git://github.com/jdonaldson/vaxe.git"
+    NeoBundle "honza/vim-snippets"
+    NeoBundle "vim-scripts/SingleCompile"
+    NeoBundle "jdonaldson/vaxe"
     NeoBundle 'bling/vim-airline'
-    NeoBundle 'git://github.com/vim-scripts/VimCoder.jar'
+    "NeoBundle 'vim-scripts/VimCoder.jar'
     NeoBundle 'vim-scripts/javacomplete'
     NeoBundle 'Yggdroot/indentLine'
     NeoBundle 'bronson/vim-trailing-whitespace'
@@ -664,6 +661,9 @@ if has('vim_starting')
     NeoBundle 'pasela/unite-webcolorname'
     "NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
+
+    " Colorscheme
+    colorscheme landscape
 
     filetype plugin on
     filetype indent on
