@@ -16,6 +16,7 @@ setopt magic_equal_subst # =以降も補完する(--prefix=/usrなど)
 setopt prompt_subst      # プロンプト定義内で変数置換やコマンド置換を扱う
 setopt notify            # バックグラウンドジョブの状態変化を即時報告する
 setopt equals            # =commandを`which command`と同じ処理にする
+setopt nonomatch         # メタ文字が含まれていてもnomatchにしない
 
 # 色を定義
 local GREEN=$'%{\e[1;32m%}'
@@ -139,7 +140,7 @@ alias -s rb="ruby"
 alias -s py="python"
 
 ### alias ###
-alias ls='ls -F --show-control-chars --color=auto'
+alias ls='ls --show-control-chars --color=auto'
 alias la="ls -a"
 alias ll="ls -ltr"
 #alias sl="ls"
@@ -172,6 +173,7 @@ alias home="cd ~/Dropbox/Home/"
 alias topcoder="cd ~/Dropbox/Home/Topcoder/"
 alias atcoder="cd ~/Dropbox/Home/atcoder/"
 alias aoj="cd ~/Dropbox/Home/AOJ/"
+alias CP="cd ~/Dropbox/Documents/M1/CP/s17g470"
 alias io="cd ~/Dropbox/Home/HTML/mille-f.github.io"
 alias doc="cd ~/Dropbox/Documents/"
 alias jpg2eps="sh ~/Dropbox/Home/shell\ script/jpg2eps"
@@ -186,3 +188,4 @@ alias st="git status"
 alias lo="git log"
 alias br="git branch"
 alias be="git branch"
+alias rpw0="ssh mille@192.168.1.10"
