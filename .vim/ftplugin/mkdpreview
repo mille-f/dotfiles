@@ -1,0 +1,106 @@
+#!/bin/sh
+#
+# This script make it easy to use pandoc for conver markdown to html file.
+# It is assumed that this script is called from vim-quickrun
+# in order to edit markdown file with live-preview.
+
+# You cah change your style sheet file.
+template="$HOME/.vim/ftplugin/github.css"
+# Of cource you cah load from the web.
+# template='http://szk-engineering.com/markdown.css'
+
+# You may change these files in order to show a header bar or a footer bar.
+header="$HOME/.vim/ftplugin/header.html"
+footer="$HOME/.vim/ftplugin/footer.html"
+
+# If the file is in this directory,
+# this script converts a html file to the upper directory.
+sourcedir='source'
+
+usage() {
+  cat << EOF
+
+NAME
+      mkdpreview - Simply render markdown by pandoc.
+
+USAGE
+      mkdpreview [OPTION]
+
+OPTION
+      -s: Save html file in the source file dir.
+      -u: Update (the same name's) html file in the source file dir.
+      -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`
+      -p: Preview HTML file in firefox.
+      -h: Show this message.
+
+EOF
+  exit 1
+}
+
+# default settings
+save=false
+update=false
+output=""
+preview=false
+previewprg="cygstart"
+
+# option handling
+while getopts suo:ph OPT
+do
+  case $OPT in
+    "s" ) save=true ;;
+    "u" ) save=true; update=true ;;
+    "o" ) save=true; output="${OPTARG}" ;;
+    "p" ) preview=true ;;
+    "h" ) usage ;;
+  esac
+done
+
+# shift arg
+shift $((OPTIND-1))
+
+# if $1 is file, check its directory.
+if [ -f "$1" ]; then
+  dir="$(cd "$(dirname $1)"; pwd)"
+  currentdir="$(basename $dir)"
+  dir_up="$(dirname $dir)"
+  if [ $currentdir = $sourcedir ]; then
+    dir="${dir_up}"
+  fi
+  namewithext=$(basename "$1")
+  name=${namewithext%.*}
+# save the file in /tmp dir.
+else 
+  dir=""
+  name="/tmp/$(tr -cd 'a-f0-9' < /dev/urandom | head -c 32)"
+fi
+
+# set the saving direction
+if [ "${output}" = "" ]; then
+  if [ -d "${dir}/html" ]; then
+    output="${dir}/html/${name}.html"
+  else
+    output="${dir}/${name}.html"
+  fi
+fi
+
+# save to the file direction.
+if $save; then
+  # update option
+  if $update; then
+    if [ -f "${output}" ];then
+      pandoc -s -t html5 -c "${template}" -s --mathjax -o "${name}.html" "${name}.md"
+    # if file doesn't exist, do nothing.
+    else
+      exit 0
+    fi
+  # save as new file
+  else
+    pandoc -s -t html5 -c "${template}" -s --mathjax -o "${name}.html" "${name}.md"
+  fi
+fi
+
+# preview in web browser.
+if $preview; then
+  $previewprg "file://${output}"
+fi
